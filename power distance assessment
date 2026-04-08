@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Power Distance Self-Reflection — Janklin Consulting</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;overflow-x:hidden;background:#faf9f7;font-family:Georgia,serif;color:#1a1a2e;font-size:15px;line-height:1.6}
+.wrap{width:100%;max-width:640px;margin:0 auto;padding:1.5rem 1rem 1.5rem}
+.hd{text-align:center;padding:1.5rem 0 1.25rem;border-bottom:1px solid #e2ddd8;margin-bottom:1.5rem}
+.tag{display:inline-block;font-size:11px;font-family:Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#3d5a80;background:#e8eef5;padding:4px 12px;border-radius:20px;margin-bottom:.75rem}
+.hd h1{font-size:1.6rem;font-weight:400;color:#1a1a2e;margin-bottom:.5rem;line-height:1.2}
+.hd p{font-size:13px;color:#4a4a6a;max-width:480px;margin:0 auto;line-height:1.65;font-family:Arial,sans-serif}
+.icard{background:#fff;border:1px solid #e2ddd8;border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:.875rem}
+.icard h3{font-size:1rem;font-weight:400;color:#1a1a2e;margin-bottom:.35rem}
+.icard p{font-size:13px;color:#4a4a6a;line-height:1.65;font-family:Arial,sans-serif}
+.btn-start{display:block;width:100%;padding:13px;background:#3d5a80;color:#fff;border:none;border-radius:8px;font-size:15px;cursor:pointer;margin-top:.25rem;font-family:Arial,sans-serif}
+.btn-start:hover{background:#2c4060}
+.prog-wrap{margin:1.25rem 0 .875rem}
+.prog-meta{display:flex;justify-content:space-between;font-size:11px;color:#8888aa;font-family:Arial,sans-serif;margin-bottom:5px}
+.prog-track{height:3px;background:#e2ddd8;border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:#3d5a80;border-radius:2px;transition:width .4s}
+.qcard{background:#fff;border:1px solid #e2ddd8;border-radius:10px;padding:1.1rem 1.1rem;margin-bottom:.875rem}
+.qcard.ans{border-color:#98c1d9}
+.qtxt{font-size:14px;color:#1a1a2e;line-height:1.6;margin-bottom:1rem}
+.sbwrap{display:flex;flex-direction:column;gap:6px}
+.sbtns{display:flex;justify-content:center;gap:6px}
+.sb{width:42px;height:42px;border-radius:50%;border:1.5px solid #e2ddd8;background:#faf9f7;cursor:pointer;font-size:13px;font-weight:bold;color:#8888aa;font-family:Arial,sans-serif;flex-shrink:0}
+.sb:hover{border-color:#3d5a80;color:#3d5a80;background:#e8eef5}
+.sb.sel{background:#3d5a80;border-color:#3d5a80;color:#fff}
+.sendrow{display:flex;justify-content:space-between;font-size:10px;color:#8888aa;font-family:Arial,sans-serif}
+.nav{display:flex;justify-content:flex-end;align-items:center;margin-top:1.25rem;gap:8px}
+.btn-back{padding:10px 16px;background:transparent;color:#4a4a6a;border:1px solid #e2ddd8;border-radius:8px;font-size:13px;cursor:pointer;font-family:Arial,sans-serif}
+.btn-next{padding:10px 22px;background:#3d5a80;color:#fff;border:none;border-radius:8px;font-size:14px;cursor:pointer;font-family:Arial,sans-serif}
+.btn-next:hover{background:#2c4060}
+.warn{font-size:12px;color:#a33;margin-top:.6rem;display:none;font-family:Arial,sans-serif}
+.rhead{margin-bottom:1.25rem}
+.rhead .ey{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#8888aa;font-family:Arial,sans-serif;margin-bottom:.3rem}
+.rhead h2{font-size:1.4rem;font-weight:400;color:#1a1a2e;margin-bottom:.3rem}
+.rhead p{font-size:13px;color:#4a4a6a;line-height:1.6;font-family:Arial,sans-serif}
+.rcard{background:#fff;border:1px solid #e2ddd8;border-radius:10px;padding:1.25rem;margin-bottom:.875rem}
+.rtag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:bold;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:.6rem;font-family:Arial,sans-serif}
+.tl{background:#eaf4ef;color:#2d6a4f}.tm{background:#fdf3e7;color:#b5651d}.th{background:#e8eef5;color:#3d5a80}
+.rorient{font-size:1.1rem;font-weight:400;color:#1a1a2e;margin-bottom:.75rem}
+.btrack{height:6px;background:#faf9f7;border-radius:3px;overflow:hidden;margin-bottom:.3rem}
+.bfill{height:100%;border-radius:3px;transition:width .8s}
+.bl{background:#2d6a4f}.bm{background:#b5651d}.bh{background:#3d5a80}
+.blabels{display:flex;justify-content:space-between;font-size:10px;color:#8888aa;margin-bottom:1rem;font-family:Arial,sans-serif}
+.rdesc{font-size:13px;color:#4a4a6a;line-height:1.7;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid #e2ddd8;font-family:Arial,sans-serif}
+.chead{font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:bold;color:#8888aa;margin-bottom:.4rem;font-family:Arial,sans-serif}
+.cbody{font-size:13px;color:#4a4a6a;line-height:1.7;font-family:Arial,sans-serif}
+.scard{background:#fff;border:1px solid #e2ddd8;border-radius:10px;padding:1.25rem;margin:1rem 0}
+.scard h3{font-size:1rem;font-weight:400;color:#1a1a2e;margin-bottom:.25rem}
+.scard p{font-size:12px;color:#8888aa;margin-bottom:.75rem;line-height:1.5;font-family:Arial,sans-serif}
+.rtbox{background:#faf9f7;border:1px solid #e2ddd8;border-radius:8px;padding:.875rem;font-size:12px;font-family:"Courier New",monospace;color:#4a4a6a;line-height:1.65;white-space:pre-wrap;word-break:break-word;max-height:180px;overflow-y:auto;margin-bottom:.6rem;user-select:all}
+.sbtns2{display:flex;gap:8px;flex-wrap:wrap}
+.btn-cp,.btn-pr{padding:8px 16px;border-radius:8px;border:1px solid #e2ddd8;background:transparent;color:#4a4a6a;font-size:13px;cursor:pointer;font-family:Arial,sans-serif}
+.btn-cp:hover,.btn-pr:hover{background:#faf9f7;border-color:#3d5a80;color:#3d5a80}
+.btn-cp.done{background:#eaf4ef;border-color:#2d6a4f;color:#2d6a4f}
+.cnote{font-size:11px;color:#8888aa;margin-top:.5rem;font-family:Arial,sans-serif;min-height:16px}
+.btn-retake{display:block;margin:1.25rem auto 0;padding:10px 18px;background:transparent;color:#4a4a6a;border:1px solid #e2ddd8;border-radius:8px;font-size:13px;cursor:pointer;font-family:Arial,sans-serif}
+.ft{text-align:center;border-top:1px solid #e2ddd8;margin-top:2rem;padding-top:1.5rem}
+.ft-brand{font-size:1rem;color:#1a1a2e;margin-bottom:2px}
+.ft-sub{font-size:12px;color:#8888aa;margin-bottom:4px;font-family:Arial,sans-serif}
+.ft-con a{color:#3d5a80;text-decoration:none;font-size:12px;font-family:Arial,sans-serif}
+.ft-cta{margin-top:.875rem;font-size:12px;color:#4a4a6a;background:#e8eef5;border-radius:8px;padding:10px 14px;line-height:1.6;font-family:Arial,sans-serif}
+.ft-cta a{color:#3d5a80;text-decoration:none;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="wrap" id="app">
+
+<div class="hd">
+  <div class="tag">Cultural Dimensions &middot; Quiz 1 of 2</div>
+  <h1>Power Distance</h1>
+  <p>A self-reflection on how you relate to authority, hierarchy, and the distribution of power in your workplace and community.</p>
+</div>
+
+<div id="s-intro">
+  <div class="icard">
+    <h3>How this works</h3>
+    <p>You will respond to 8 statements about authority and hierarchy. Rate each from 1 (strongly disagree) to 5 (strongly agree). There are no right or wrong answers &mdash; only a clearer view of how you see the world.</p>
+  </div>
+  <div class="icard">
+    <h3>What is power distance?</h3>
+    <p>From Geert Hofstede&rsquo;s cultural dimensions research, power distance describes how people relate to authority and inequality. Those with high power distance accept hierarchical order; those with low power distance question it and prefer egalitarian structures.</p>
+  </div>
+  <button class="btn-start" onclick="startQuiz()">Begin the quiz &rarr;</button>
+  <div class="ft" style="margin-top:1.5rem">
+    <div class="ft-brand">Janklin Consulting</div>
+    <div class="ft-sub">Created by Andrea McCoy</div>
+    <div class="ft-con"><a href="/cdn-cgi/l/email-protection#3d5c53594f585c7d575c5356515453135e5c"><span class="__cf_email__" data-cfemail="7819161c0a1d193812191613141116561b19">[email&#160;protected]</span></a> &middot; <a href="https://janklin.ca" target="_blank">janklin.ca</a></div>
+  </div>
+</div>
+
+<div id="s-quiz" style="display:none">
+  <div class="prog-wrap">
+    <div class="prog-meta"><span>Power Distance</span><span id="qctr"></span></div>
+    <div class="prog-track"><div class="prog-fill" id="prog" style="width:0%"></div></div>
+  </div>
+  <div id="qcon"></div>
+  <div class="nav">
+    <button class="btn-back" id="bbk" onclick="goBack()" style="display:none">&larr; Back</button>
+    <button class="btn-next" id="bnx" onclick="goNext()">Next &rarr;</button>
+  </div>
+  <div class="warn" id="warn">Please respond to all statements before continuing.</div>
+</div>
+
+<div id="s-res" style="display:none"><div id="rcon"></div></div>
+
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+var qs=[
+  {id:"pd1",text:"I believe it is important to respect and follow decisions made by those in authority, even when I disagree."},
+  {id:"pd2",text:"In a workplace, a clear hierarchy helps things run smoothly and reduces confusion."},
+  {id:"pd3",text:"I feel comfortable expressing disagreement directly to a manager or supervisor.",rev:true},
+  {id:"pd4",text:"People in positions of power deserve special privileges and recognition."},
+  {id:"pd5",text:"I prefer working in environments where decisions come from the top, rather than through group discussion."},
+  {id:"pd6",text:"I believe leaders and employees are fundamentally different types of people."},
+  {id:"pd7",text:"It is disrespectful to question the decisions of someone more senior than you."},
+  {id:"pd8",text:"Status symbols &mdash; titles, office size, dress &mdash; are an important part of professional life."}
+];
+var PS=4,ans={},pg=0,tot=Math.ceil(qs.length/PS);
+function sc(v,q){return q.rev?6-v:v;}
+function startQuiz(){document.getElementById("s-intro").style.display="none";document.getElementById("s-quiz").style.display="block";render();}
+function render(){
+  var s=pg*PS,e=Math.min(s+PS,qs.length),sl=qs.slice(s,e);
+  document.getElementById("prog").style.width=Math.round(pg/tot*100)+"%";
+  document.getElementById("qctr").textContent=(s+1)+"&ndash;"+e+" of "+qs.length;
+  document.getElementById("bbk").style.display=pg>0?"block":"none";
+  document.getElementById("bnx").textContent=pg===tot-1?"See my results →":"Next →";
+  document.getElementById("warn").style.display="none";
+  var h="";
+  sl.forEach(function(q){
+    var a=ans[q.id]||0;
+    h+='<div class="qcard'+(a?" ans":"")+'"><div class="qtxt">'+q.text+'</div><div class="sbwrap"><div class="sbtns">';
+    for(var v=1;v<=5;v++) h+='<button class="sb'+(a===v?" sel":"")+'" onclick="pick(''+q.id+'','+v+')">'+v+'</button>';
+    h+='</div><div class="sendrow"><span>Strongly disagree</span><span>Strongly agree</span></div></div></div>';
+  });
+  document.getElementById("qcon").innerHTML=h;
+}
+function pick(id,v){ans[id]=v;render();}
+function goNext(){
+  var s=pg*PS,e=Math.min(s+PS,qs.length),sl=qs.slice(s,e);
+  if(sl.some(function(q){return!ans[q.id];})){document.getElementById("warn").style.display="block";return;}
+  if(pg<tot-1){pg++;render();window.scrollTo({top:0});}else showRes();
+}
+function goBack(){if(pg>0){pg--;render();window.scrollTo({top:0});}}
+function showRes(){
+  document.getElementById("s-quiz").style.display="none";
+  document.getElementById("s-res").style.display="block";
+  var raw=qs.reduce(function(s,q){return s+sc(ans[q.id],q);},0);
+  var pct=Math.round(raw/(qs.length*5)*100);
+  var lv=pct>=65?"high":pct>=40?"moderate":"low";
+  var lb={low:"Low power distance",moderate:"Moderate power distance",high:"High power distance"};
+  var tc={low:"tl",moderate:"tm",high:"th"};
+  var bc={low:"bl",moderate:"bm",high:"bh"};
+  var ds={
+    low:"You generally prefer flat, egalitarian environments where everyone's voice carries equal weight regardless of title or tenure. You are comfortable challenging authority, questioning decisions, and expect leaders to earn respect rather than assume it. Transparency and accessibility in leadership feel natural and right to you.",
+    moderate:"You have a nuanced relationship with hierarchy. You can work within formal structures and respect the authority of leaders, but you also believe in the value of open dialogue across levels. Context matters to you when deciding how much deference is appropriate — and you tend to adapt.",
+    high:"You tend to accept and respect hierarchical structures in your workplace and community. Titles, seniority, and formal authority feel meaningful and legitimate to you. You may value clear chains of command, expect leaders to take decisive charge, and find comfort in knowing where you stand in a structure."
+  };
+  var ct={
+    low:"When working with someone high in power distance, know that addressing a concern to a peer rather than escalating it through proper channels may feel unsafe or disloyal to them. Formal acknowledgment of their role and seniority can make communication feel more respectful and secure. Avoid interpreting deference as passivity — it may be a sign of deep respect.",
+    moderate:"Your flexibility is a strength. When working with high power distance colleagues, lean into structure and formality; when working with low power distance colleagues, invite debate and direct challenge. Your ability to read the room and shift your approach is valuable across cultural contexts.",
+    high:"When working with someone low in power distance, know that they may speak directly to senior leaders and question decisions openly — this is not disrespect, but how they build trust. Invite their input in meetings, and don't interpret directness as insubordination. They may also expect leaders to be accessible and to explain their reasoning."
+  };
+  var pt="POWER DISTANCE SELF-REFLECTION RESULTS
+=======================================
+Janklin Consulting · Andrea McCoy
+
+Your score: "+pct+"%
+Your orientation: "+lb[lv]+"
+
+"+ds[lv]+"
+
+ENGAGING ACROSS THE DIFFERENCE
+"+ct[lv]+"
+
+---------------------------------------
+Created by Janklin Consulting
+Andrea McCoy · Cultural Privilege & Workplace Inclusion
+andrea@janklin.ca · janklin.ca
+
+Interested in bringing this work to your organization?
+Reach out: andrea@janklin.ca";
+  document.getElementById("rcon").innerHTML='<div class="rhead"><div class="ey">Your results</div><h2>Your power distance orientation</h2><p>This is a starting point for reflection, not a fixed label. It shows how you tend to see the world — and invites you to consider how others may see it differently.</p></div><div class="rcard"><span class="rtag '+tc[lv]+'">'+lb[lv]+'</span><div class="rorient">'+pct+'% — '+lb[lv]+'</div><div class="btrack"><div class="bfill '+bc[lv]+'" style="width:'+pct+'%"></div></div><div class="blabels"><span>Low (egalitarian)</span><span>High (hierarchical)</span></div><div class="rdesc">'+ds[lv]+'</div><div class="chead">Engaging across the difference</div><div class="cbody">'+ct[lv]+'</div></div><div class="scard"><h3>Save your results</h3><p>Copy the text below and paste it into an email, note, or document. Or print a copy for yourself.</p><div class="rtbox" id="rtx">'+pt+'</div><div class="sbtns2"><button class="btn-cp" id="bcp" onclick="doCopy()">Copy to clipboard</button><button class="btn-pr" onclick="doPrint()">Print / Save as PDF</button></div><div class="cnote" id="cnote">Select all the text above and copy, or use the button.</div></div><button class="btn-retake" onclick="retake()">Retake the quiz</button><div class="ft"><div class="ft-brand">Janklin Consulting</div><div class="ft-sub">Created by Andrea McCoy &middot; Cultural Privilege &amp; Workplace Inclusion</div><div class="ft-con"><a href="mailto:andrea@janklin.ca">andrea@janklin.ca</a> &middot; <a href="https://janklin.ca" target="_blank">janklin.ca</a></div><div class="ft-cta">Ready to bring this work into your team or organization?<br><a href="mailto:andrea@janklin.ca">Reach out to Andrea</a> to explore how Janklin Consulting can support your workplace culture journey.</div></div>';
+  window.scrollTo({top:0});
+}
+function doCopy(){
+  var txt=document.getElementById("rtx").innerText;
+  var btn=document.getElementById("bcp");
+  var note=document.getElementById("cnote");
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){
+      btn.textContent="Copied!";btn.classList.add("done");
+      note.textContent="Paste into an email, Google Doc, or anywhere you like.";
+      setTimeout(function(){btn.textContent="Copy to clipboard";btn.classList.remove("done");},3000);
+    }).catch(function(){fb(txt,note);});
+  }else{fb(txt,note);}
+}
+function fb(txt,note){
+  var ta=document.createElement("textarea");ta.value=txt;ta.style.position="fixed";ta.style.opacity="0";
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand("copy");note.textContent="Copied!";}
+  catch(e){note.textContent="Select all the text in the box and copy manually (Ctrl+C or Cmd+C).";}
+  document.body.removeChild(ta);
+}
+function doPrint(){
+  var txt=document.getElementById("rtx").innerText;
+  var w=window.open("","_blank","width=640,height=720");
+  if(!w){alert("Please allow pop-ups to print.");return;}
+  w.document.write("<!DOCTYPE html><html><head><title>Power Distance Results</title><style>body{font-family:Georgia,serif;padding:2rem;max-width:600px;margin:0 auto;color:#1a1a2e;line-height:1.75}pre{white-space:pre-wrap;font-family:inherit;font-size:14px}h2{font-size:1.3rem;font-weight:400;margin-bottom:1rem}button{margin-top:1.5rem;padding:10px 20px;font-size:14px;cursor:pointer;background:#3d5a80;color:#fff;border:none;border-radius:6px}@media print{button{display:none}}</style></head><body><h2>Power Distance Self-Reflection Results &mdash; Janklin Consulting</h2><pre>"+txt+"</pre><button onclick="window.print()">Print / Save as PDF</but
